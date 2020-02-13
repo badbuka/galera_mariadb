@@ -1,0 +1,4 @@
+---
+# defaults file for galera_mariadb
+galera_mariadb_cluster_name: "galera_mir"
+galera_mariadb_cluster_all: "192.168.172.222,192.168.172.223,192.168.172.225"

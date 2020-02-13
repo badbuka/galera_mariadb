@@ -1,0 +1,14 @@
+---
+- lineinfile:
+    path: /etc/mysql/mariadb.cnf # required. The file to modify.,Before 2.3 this option was only usable as I(dest), I(destfile) and I(name).
+    state: present # not required. choices: absent;present. Whether the line should be there or not.
+    line: ^character-set-server = utf8
+- lineinfile:
+    path: /etc/mysql/mariadb.cnf # required. The file to modify.,Before 2.3 this option was only usable as I(dest), I(destfile) and I(name).
+    state: present # not required. choices: absent;present. Whether the line should be there or not.
+    line: ^character_set_server = utf8
+- name: Template to config
+  template: 
+    src: etc/mysql/mariadb.conf.d/galera.cnf.j2
+    dest: /etc/mysql/mariadb.conf.d/galera.cnf
+  become: true

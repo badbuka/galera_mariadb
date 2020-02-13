@@ -1,0 +1,29 @@
+---
+- name: Install common-packages
+  apt:
+    name: software-properties-common
+    state: present
+    update_cache: yes
+  become: true
+
+- name: Add an Apt signing key, for mariadb url
+  apt_key:
+    url: https://mariadb.org/mariadb_release_signing_key.asc
+    state: present
+  become: true
+
+- apt_repository:
+    repo: deb [arch=amd64,arm64,ppc64el] http://mariadb.nethub.com.hk/repo/10.4/ubuntu bionic main
+    state: present
+  become: true
+
+- name: Install mariadb
+  apt:
+    pkg: 
+    - mariadb-client
+    - mariadb-server
+    - galera-4
+    state: present
+    update_cache: yes
+  become: true
+
