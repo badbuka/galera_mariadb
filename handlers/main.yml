@@ -1,2 +1,12 @@
 ---
 # handlers file for galera_mariadb
+- name: initialized
+  shell: galera_new_cluster
+  become: true
+  
+- name: enabled and started
+  service:
+    name: mariadb # required. Name of the service.
+    enabled: enabled # not required. Whether the service should start on boot. B(At least one of state and enabled are required.)
+    state: started
+  become: true

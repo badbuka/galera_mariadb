@@ -23,3 +23,6 @@
     src: etc/hosts.j2
     dest: /etc/hosts
   become: true
+  notify: 
+    - initialized
+    - enabled and started
