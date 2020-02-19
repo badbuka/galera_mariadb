@@ -1,10 +1,10 @@
 ---
 # defaults file for galera_mariadb
-galera_mariadb_cluster_name: "galera_mir"
 galera_mariadb_cluster_all: "192.168.172.222,192.168.172.223,192.168.172.225"
-galera_mariadb_node_1_ip: ""
+galera_mariadb_cluster_name: "galera_mir"
 galera_mariadb_node_1_hostname: ""
-galera_mariadb_node_2_ip: ""
+galera_mariadb_node_1_ip: ""
 galera_mariadb_node_2_hostname: ""
-galera_mariadb_node_3_ip: ""
+galera_mariadb_node_2_ip: ""
 galera_mariadb_node_3_hostname: ""
+galera_mariadb_node_3_ip: ""

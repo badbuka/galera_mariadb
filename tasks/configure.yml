@@ -17,3 +17,9 @@
     src: etc/mysql/mariadb.conf.d/galera.cnf.j2
     dest: /etc/mysql/mariadb.conf.d/galera.cnf
   become: true
+
+- name: Template to config
+  template: 
+    src: etc/hosts.j2
+    dest: /etc/hosts
+  become: true
